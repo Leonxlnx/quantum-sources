@@ -1,7 +1,6 @@
 /* ============================================
    Quanten-Algorithmen Quellen
    Minimalistisches Design: Rot, Schwarz, Weiß
-   Chicago Citation Style
    ============================================ */
 
 :root {
@@ -96,6 +95,15 @@ h1 {
     font-weight: 700;
 }
 
+.event {
+    margin-top: 20px;
+    font-size: 0.8125rem;
+    color: var(--color-gray-text);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
 /* Main Content */
 main {
     padding: 48px 0 80px;
@@ -123,14 +131,14 @@ main {
     border-radius: 2px;
 }
 
-/* Source Cards - Chicago Style */
+/* Source Cards */
 .source-card {
     display: flex;
-    gap: 20px;
-    padding: 24px;
-    margin-bottom: 12px;
+    gap: 16px;
+    padding: 20px 24px;
+    margin-bottom: 8px;
     background: var(--color-gray-light);
-    border-radius: 8px;
+    border-radius: 6px;
     border-left: 3px solid transparent;
     transition: all 0.2s ease;
 }
@@ -144,15 +152,8 @@ main {
     font-size: 0.875rem;
     font-weight: 700;
     color: var(--color-red);
-    min-width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--color-white);
-    border-radius: 50%;
+    min-width: 32px;
     flex-shrink: 0;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .source-content {
@@ -162,11 +163,19 @@ main {
 .citation {
     font-size: 0.9375rem;
     color: var(--color-black);
-    line-height: 1.8;
+    line-height: 1.7;
 }
 
-.citation em {
-    font-style: italic;
+.citation a {
+    color: var(--color-red);
+    text-decoration: none;
+    word-break: break-all;
+    transition: color 0.2s ease;
+}
+
+.citation a:hover {
+    color: var(--color-red-dark);
+    text-decoration: underline;
 }
 
 /* Footer */
@@ -213,8 +222,8 @@ footer p {
     }
 
     .source-card {
-        padding: 20px;
-        gap: 16px;
+        padding: 16px 20px;
+        gap: 12px;
     }
 
     .citation {

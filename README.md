@@ -1,13 +1,5 @@
-# Quanten-Algorithmen – Quellenverzeichnis
+# Quanten-Algorithmen
 
-Quellenwebseite für das wissenschaftliche Poster über Quanten-Algorithmen.
+Quellenverzeichnis für das wissenschaftliche Poster.
 
-## Autoren
-
-- Christian Raileanu
-- Leon Lin
-- Rijad Besic
-
-## Zitationsstil
-
-Chicago
+**Autoren:** Christian Raileanu, Leon Lin, Rijad Besic
