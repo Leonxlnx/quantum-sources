@@ -1,0 +1,223 @@
+/* ============================================
+   Quanten-Algorithmen Quellen
+   Minimalistisches Design: Rot, Schwarz, Weiß
+   Chicago Citation Style
+   ============================================ */
+
+:root {
+    --color-black: #0a0a0a;
+    --color-white: #ffffff;
+    --color-red: #dc2626;
+    --color-red-dark: #b91c1c;
+    --color-red-light: #fef2f2;
+    --color-gray-light: #fafafa;
+    --color-gray: #e5e5e5;
+    --color-gray-text: #525252;
+
+    --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-white);
+    color: var(--color-black);
+    line-height: 1.7;
+    min-height: 100vh;
+}
+
+/* Container */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+/* Header */
+header {
+    padding: 100px 0 60px;
+    text-align: center;
+    position: relative;
+}
+
+.header-accent {
+    width: 60px;
+    height: 4px;
+    background: var(--color-red);
+    margin: 0 auto 32px;
+    border-radius: 2px;
+}
+
+h1 {
+    font-size: 2.75rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin-bottom: 8px;
+    color: var(--color-black);
+}
+
+.subtitle {
+    font-size: 1.125rem;
+    color: var(--color-gray-text);
+    font-weight: 400;
+    margin-bottom: 32px;
+}
+
+.authors {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding-top: 24px;
+    border-top: 1px solid var(--color-gray);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.authors span {
+    font-size: 0.9375rem;
+    color: var(--color-black);
+    font-weight: 500;
+}
+
+.authors .separator {
+    color: var(--color-red);
+    font-weight: 700;
+}
+
+/* Main Content */
+main {
+    padding: 48px 0 80px;
+}
+
+/* Sections */
+.sources-section {
+    margin-bottom: 56px;
+}
+
+.sources-section:last-child {
+    margin-bottom: 0;
+}
+
+.sources-section h2 {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-white);
+    background: var(--color-red);
+    padding: 8px 16px;
+    margin-bottom: 24px;
+    display: inline-block;
+    border-radius: 2px;
+}
+
+/* Source Cards - Chicago Style */
+.source-card {
+    display: flex;
+    gap: 20px;
+    padding: 24px;
+    margin-bottom: 12px;
+    background: var(--color-gray-light);
+    border-radius: 8px;
+    border-left: 3px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.source-card:hover {
+    background: var(--color-red-light);
+    border-left-color: var(--color-red);
+}
+
+.source-number {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--color-red);
+    min-width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-white);
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.source-content {
+    flex: 1;
+}
+
+.citation {
+    font-size: 0.9375rem;
+    color: var(--color-black);
+    line-height: 1.8;
+}
+
+.citation em {
+    font-style: italic;
+}
+
+/* Footer */
+footer {
+    padding: 48px 0;
+    text-align: center;
+    border-top: 1px solid var(--color-gray);
+}
+
+footer p {
+    font-size: 0.8125rem;
+    color: var(--color-gray-text);
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    header {
+        padding: 60px 0 40px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .authors {
+        gap: 8px;
+    }
+
+    .authors span {
+        font-size: 0.875rem;
+    }
+
+    main {
+        padding: 32px 0 60px;
+    }
+
+    .source-card {
+        padding: 20px;
+        gap: 16px;
+    }
+
+    .citation {
+        font-size: 0.875rem;
+    }
+}
