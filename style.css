@@ -47,6 +47,20 @@ header {
     padding: 100px 0 60px;
     text-align: center;
     position: relative;
+    overflow: hidden;
+}
+
+/* Subtle quantum glow behind header */
+.header-glow {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 200px;
+    background: radial-gradient(ellipse at center, rgba(220, 38, 38, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
 }
 
 .header-accent {
@@ -55,6 +69,8 @@ header {
     background: var(--color-red);
     margin: 0 auto 32px;
     border-radius: 2px;
+    position: relative;
+    z-index: 1;
 }
 
 h1 {
@@ -63,13 +79,27 @@ h1 {
     letter-spacing: -0.03em;
     margin-bottom: 8px;
     color: var(--color-black);
+    position: relative;
+    z-index: 1;
 }
 
 .subtitle {
     font-size: 1.125rem;
     color: var(--color-gray-text);
     font-weight: 400;
-    margin-bottom: 32px;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+}
+
+.context {
+    font-size: 0.875rem;
+    color: var(--color-gray-text);
+    max-width: 480px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
 }
 
 .authors {
@@ -82,6 +112,8 @@ h1 {
     border-top: 1px solid var(--color-gray);
     max-width: 400px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .authors span {
@@ -102,6 +134,8 @@ h1 {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    position: relative;
+    z-index: 1;
 }
 
 /* Main Content */
@@ -178,11 +212,44 @@ main {
     text-decoration: underline;
 }
 
+/* Fade-in Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Footer */
 footer {
     padding: 48px 0;
     text-align: center;
     border-top: 1px solid var(--color-gray);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.poster-link {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-red);
+    text-decoration: none;
+    padding: 10px 24px;
+    border: 1.5px solid var(--color-red);
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    letter-spacing: 0.01em;
+}
+
+.poster-link:hover {
+    background: var(--color-red);
+    color: var(--color-white);
 }
 
 footer p {
@@ -207,6 +274,15 @@ footer p {
 
     .subtitle {
         font-size: 1rem;
+    }
+
+    .context {
+        font-size: 0.8125rem;
+    }
+
+    .header-glow {
+        width: 280px;
+        height: 140px;
     }
 
     .authors {

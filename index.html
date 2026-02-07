@@ -39,9 +39,11 @@
 <body>
     <div class="container">
         <header>
+            <div class="header-glow"></div>
             <div class="header-accent"></div>
             <h1>Quanten-Algorithmen</h1>
             <p class="subtitle">Quellenverzeichnis</p>
+            <p class="context">Digitales Quellenverzeichnis zum wissenschaftlichen Poster über Quanten-Algorithmen.</p>
             <div class="authors">
                 <span>Christian Raileanu</span>
                 <span class="separator">·</span>
@@ -56,7 +58,7 @@
             <section class="sources-section">
                 <h2>Literatur</h2>
 
-                <article class="source-card">
+                <article class="source-card fade-in">
                     <span class="source-number">[1]</span>
                     <div class="source-content">
                         <p class="citation">NEVEN, Hartmut (2024): Meet Willow, our state-of-the-art quantum chip.
@@ -68,7 +70,7 @@
                     </div>
                 </article>
 
-                <article class="source-card">
+                <article class="source-card fade-in">
                     <span class="source-number">[2]</span>
                     <div class="source-content">
                         <p class="citation">SEEGERER, Stefan (2022): Cheat Sheet – Quantum Computing. Hrsg. v. IQM
@@ -80,7 +82,7 @@
                     </div>
                 </article>
 
-                <article class="source-card">
+                <article class="source-card fade-in">
                     <span class="source-number">[3]</span>
                     <div class="source-content">
                         <p class="citation">WOLF, Ronald de (2024): Quantum Computing: Lecture Notes. University of
@@ -89,7 +91,7 @@
                     </div>
                 </article>
 
-                <article class="source-card">
+                <article class="source-card fade-in">
                     <span class="source-number">[4]</span>
                     <div class="source-content">
                         <p class="citation">ACHARYA, Rajeev u. a. (2024): Quantum error correction below the surface
@@ -100,7 +102,7 @@
                     </div>
                 </article>
 
-                <article class="source-card">
+                <article class="source-card fade-in">
                     <span class="source-number">[5]</span>
                     <div class="source-content">
                         <p class="citation">IBM QUANTUM (2024): Deutsch-Jozsa Algorithm. In: Fundamentals of Quantum
@@ -112,7 +114,7 @@
                     </div>
                 </article>
 
-                <article class="source-card">
+                <article class="source-card fade-in">
                     <span class="source-number">[6]</span>
                     <div class="source-content">
                         <p class="citation">MI, Xiao u. a. (2025): Observation of constructive interference at the edge
@@ -127,7 +129,7 @@
             <section class="sources-section">
                 <h2>Bildquellen</h2>
 
-                <article class="source-card">
+                <article class="source-card fade-in">
                     <span class="source-number">[Abb. 1]</span>
                     <div class="source-content">
                         <p class="citation">Bloch-Kugel-Darstellung, basierend auf: HERBST, K. (o. J.): Bloch Sphere
@@ -137,14 +139,14 @@
                     </div>
                 </article>
 
-                <article class="source-card">
+                <article class="source-card fade-in">
                     <span class="source-number">[Abb. 2]</span>
                     <div class="source-content">
                         <p class="citation">Eigene Darstellung der Autoren.</p>
                     </div>
                 </article>
 
-                <article class="source-card">
+                <article class="source-card fade-in">
                     <span class="source-number">[Abb. 3]</span>
                     <div class="source-content">
                         <p class="citation">Google Willow Quantum Chip. In: Computerwoche (2024): Google verspricht mehr
@@ -159,9 +161,29 @@
         </main>
 
         <footer>
-            <p>2026</p>
+            <a href="https://www.canva.com/design/DAHAWH1aIUs/3mmeyKfnRc7WpCOKwJLz2Q/edit?utm_content=DAHAWH1aIUs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+                target="_blank" rel="noopener" class="poster-link">Poster ansehen →</a>
+            <p>Wissenschaftswoche 2026</p>
         </footer>
     </div>
+
+    <script>
+        // Stagger fade-in animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    const card = entry.target;
+                    const cards = Array.from(document.querySelectorAll('.fade-in'));
+                    const index = cards.indexOf(card);
+                    card.style.transitionDelay = `${index * 60}ms`;
+                    card.classList.add('visible');
+                    observer.unobserve(card);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(card => observer.observe(card));
+    </script>
 </body>
 
 </html>
